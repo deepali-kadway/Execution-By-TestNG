@@ -12,6 +12,9 @@ public class AssertionsInTestNG {
 	
 	@Test
 	public void checktitle() {
+		
+		/*SoftAssert allows the test method to continue execution even after the assertion fails, 
+		 * rather than immediately terminating the test*/
 		SoftAssert softassert = new SoftAssert();
 		String expectedtitle = "Amazon.com. Spend less. Smile more.";
 		String expectedtext = "Sell";
@@ -28,7 +31,7 @@ public class AssertionsInTestNG {
 		System.out.println("Verifying Text");
 		softassert.assertEquals(actualtext, expectedtext, "Comparison check");
 
-		//driver.close();
+		/*Report all the failures*/
 		softassert.assertAll();
 
 	}
